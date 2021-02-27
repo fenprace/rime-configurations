@@ -1,0 +1,119 @@
+# Rime schema
+# encoding: utf-8
+
+schema:
+  schema_id: ching
+  name: Ching 拼音
+  version: "0.0.1"
+  author:
+    - FENPRACE
+  description: Ching 简体拼音输入
+
+switches:
+  - name: ascii_mode
+    reset: 0
+    states: [中, En]
+  - name: full_shape
+    states: [半, 全]
+  - name: traditional
+    reset: 0
+    states: [简, 繁]
+  - name: ascii_punct
+    states: [。, ．]
+
+engine:
+  processors:
+    - ascii_composer
+    - recognizer
+    - key_binder
+    - speller
+    - punctuator
+    - selector
+    - navigator
+    - express_editor
+  segmentors:
+    - ascii_segmentor
+    - matcher
+    - abc_segmentor
+    - punct_segmentor
+    - fallback_segmentor
+  translators:
+    # - echo_translator
+    - punct_translator
+    - script_translator
+    # - table_translator@easy_en
+  filters:
+    - simplifier
+    - uniquifier
+
+speller:
+  alphabet: abcdefghijklmnopqrstuvwxyz
+  delimiter: " '"
+  algebra:
+    - erase/^xx$/
+    - abbrev/^([a-z]).+$/$1/
+    - abbrev/^([zcs]h).+$/$1/
+    - derive/^([nl])ve$/$1ue/
+    - derive/^([jqxy])u/$1v/
+    - derive/un$/uen/
+    - derive/ui$/uei/
+    - derive/iu$/iou/
+    - derive/([aeiou])ng$/$1gn/
+    - derive/([dtngkhrzcs])o(u|ng)$/$1o/
+    - derive/ong$/on/
+    - derive/ao$/oa/
+    - derive/([iu])a(o|ng?)$/a$1$2/
+
+translator:
+  dictionary: ching
+  prism: ching
+  enable_user_dict: true
+  preedit_format:
+    - xform/([nl])v/$1ü/
+    - xform/([nl])ue/$1üe/
+    - xform/([jqxy])v/$1u/
+
+simplifier:
+  option_name: traditional
+  opencc_config: s2t.json
+
+punctuator:
+  import_preset: default
+  # half_shape:
+  #   "[": "【"
+  #   "]": "】"
+  #   "<": "《"
+  #   ">": "》"
+  #   "\\": "、"
+  #   "/": "／"
+  #   "$": "￥"
+  #   "%": "％"
+  #   "*": "＊"
+  #   "~": "～"
+
+key_binder:
+  import_preset: default
+
+recognizer:
+  import_preset: default
+# NOTES:
+# translators:
+#   - table_translator@custom_phrase
+# simplifier:
+#   excluded_types: [ user_table ]
+# custom_phrase:
+#   dictionary: ""
+#   user_dict: custom_phrase
+#   db_class: stabledb
+#   enable_completion: true
+#   enable_sentence: true
+#   enable_user_dict: true
+#   initial_quality: 1
+# spell:
+#   alphabet: abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ
+# easy_en:
+#   # dictionary: ching_en
+#   dictionary: easy_en
+#   enable_sentence: false
+#   comment_format: [ xform/^.+$// ]
+#   initial_quality: -1

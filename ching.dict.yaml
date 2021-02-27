@@ -1,0 +1,20 @@
+---
+name: ching
+version: "0.1"
+sort: by_weight
+use_preset_vocabulary: false
+import_tables:
+  - dictionaries/pinyin_simp
+  - dictionaries/luna_pinyin.simp
+  - dictionaries/luna_pinyin.extended.simp
+  - dictionaries/luna_pinyin.hanyu.simp
+  - dictionaries/luna_pinyin.poetry.simp
+  - dictionaries/luna_pinyin.chengyusuyu
+  - dictionaries/luna_pinyin.jisuanjicihuidaquan
+  - dictionaries/luna_pinyin.kaifadashenzhuanyongciku
+  - dictionaries/luna_pinyin.xiandaihanyuchangyongcibiao
+  - dictionaries/zhwiki-20210201
+  # - dictionaries/luna_pinyin.emoji
+---
+欅	ju
+欅坂	juban

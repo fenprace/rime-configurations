@@ -1,0 +1,22 @@
+customization:
+  distribution_code_name: Weasel
+  distribution_version: 0.14.3
+  generator: "Rime::SwitcherSettings"
+  modified_time: "Sun Dec 20 01:13:59 2020"
+  rime_version: 1.5.3
+patch:
+  "menu/page_size": 8
+  ascii_composer:
+    good_old_caps_lock: false
+    switch_key:
+      Caps_Lock: commit_code
+      Control_L: commit_code
+      Control_R: commit_code
+      Shift_L: noop
+      Shift_R: noop
+  "key_binder/bindings":
+    - { accept: bracketleft, send: Page_Up, when: paging }
+    - { accept: bracketright, send: Page_Down, when: has_menu }
+  schema_list:
+    - { schema: ching }
+    - { schema: japanese }
