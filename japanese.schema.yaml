@@ -47,7 +47,7 @@ speller:
     - "derive/_/x/"
     - "derive/-/q/"
     # Add / remove rules the as you wish
-    - "derive/i_e/ye/"
+    # - "derive/i_e/ye/"
     # - 'derive/fu/hu/'
 
 translator:
@@ -62,4 +62,7 @@ punctuator:
   import_preset: default
 
 recognizer:
+  import_preset: default
+
+key_binder:
   import_preset: default

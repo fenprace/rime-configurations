@@ -38,10 +38,9 @@ engine:
     - punct_segmentor
     - fallback_segmentor
   translators:
-    # - echo_translator
+    - echo_translator
     - punct_translator
     - script_translator
-    # - table_translator@easy_en
   filters:
     - simplifier
     - uniquifier
@@ -79,17 +78,39 @@ simplifier:
 
 punctuator:
   import_preset: default
-  # half_shape:
-  #   "[": "【"
-  #   "]": "】"
-  #   "<": "《"
-  #   ">": "》"
-  #   "\\": "、"
-  #   "/": "／"
-  #   "$": "￥"
-  #   "%": "％"
-  #   "*": "＊"
-  #   "~": "～"
+  half_shape:
+    "!": "！"
+    '"': { pair: ["“", "”"] }
+    "#": "#"
+    "$": ["￥", "$", "€", "£", "¥", "¢", "¤"]
+    "%": ["%", "％", "°", "℃"]
+    "&": "&"
+    "'": { pair: ["‘", "’"] }
+    "(": （
+    ")": ）
+    "*": ["*", "＊", "·", "・", "×", "※", "❂"]
+    "+": "+"
+    ",": "，"
+    "-": "-"
+    ".": "。"
+    "/": ["、", "/", "／", "÷"]
+    ":": "："
+    ";": "；"
+    "<": "《"
+    "=": "="
+    ">": "》"
+    "?": "？"
+    "@": "@"
+    "[": "「"
+    "\\": "、"
+    "]": "」"
+    "^": "……"
+    _: "——"
+    "`": "`"
+    "{": 『
+    "|": ["·", "|", "｜", "§", "¦"]
+    "}": 』
+    "~": ～
 
 key_binder:
   import_preset: default

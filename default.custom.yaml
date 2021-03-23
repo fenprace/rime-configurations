@@ -1,11 +1,5 @@
-customization:
-  distribution_code_name: Weasel
-  distribution_version: 0.14.3
-  generator: "Rime::SwitcherSettings"
-  modified_time: "Sun Dec 20 01:13:59 2020"
-  rime_version: 1.5.3
 patch:
-  "menu/page_size": 8
+  "menu/page_size": 5
   ascii_composer:
     good_old_caps_lock: false
     switch_key:
