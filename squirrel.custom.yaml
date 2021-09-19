@@ -4,6 +4,9 @@ patch:
     color_scheme_dark: mojave_dark
     text_orientation: horizontal
     inline_preedit: true
+  # app_options:
+  #   com.microsoft.VSCode:
+  #     ascii_mode: false
 
   preset_color_schemes/+:
     mojave_light:

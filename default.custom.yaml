@@ -13,4 +13,5 @@ patch:
     - { accept: bracketright, send: Page_Down, when: has_menu }
   schema_list:
     - { schema: ching }
+    - { schema: double_pinyin_flypy }
     - { schema: japanese }
